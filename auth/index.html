@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+  <meta name="renderer" content="webkit" />
+  <meta name="force-rendering" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Authorize with GitHub | Wiki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+    integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/auth.css" />
+  
+</head>
+
+<body class="mdui-theme-primary-pink mdui-theme-accent-purple">
+  <!-- navbar -->
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-pink">
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+      <a href="javascript:;" class="mdui-typo-headline">Wikiname</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">account_circle</i></a>
+    </div>
+  </div>
+
+  <div class="mdui-container">
+    <div id="content-body" class="mdui-typo">
+      <h1>Authorize with GitHub</h1>
+      <p>You need to provide your GitHub
+        <a
+          href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">
+          Personal Access Token
+        </a> to authroize this wiki.</p>
+      <p>Following permissions are required for this wiki to function.</p>
+      <ul>
+        <li><code>public_repo</code> for accessing public repositories to commit your changes to this wiki. </li>
+      </ul>
+      <p>If you have created your access token, paste it below.</p>
+      <form id="github-pat-form">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">GitHub PAT</label>
+          <input class="mdui-textfield-input" type="text" id="user-pat"/>
+        </div>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" type="submit">Authorize</button>
+      </form>
+      <p id="bad-pat-format"></p>
+    </div>
+  </div>
+  <script type="module" src="/js/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+    integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+  <meta name="renderer" content="webkit" />
+  <meta name="force-rendering" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Wiki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+    integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/view.css" />
+</head>
+
+<body class="mdui-theme-primary-pink mdui-theme-accent-purple mdui-drawer-body-left mdui-appbar-with-toolbar">
+  <!-- navbar -->
+  <div class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-pink">
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">menu</i></a>
+      <a href="javascript:;" class="mdui-typo-headline">Wikiname</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
+      <button class="mdui-btn mdui-btn-icon" id="appbar-user">
+        <i class="mdui-icon material-icons">account_circle</i>
+      </button>
+      <ul class="mdui-menu" id="user-menu">
+        <li class="mdui-menu-item">
+          <a class="mdui-ripple" id="user-menu-userpage">Your User Page</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="javascript:;" class="mdui-ripple">Settings</a>
+        </li>
+        <li class="mdui-divider"></li>
+        <li class="mdui-menu-item">
+          <a href="javascript:;" class="mdui-ripple">Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mdui-drawer" id="left-drawer">
+    <ul class="mdui-list">
+      <li class="mdui-list-item mdui-ripple">
+        <a class="mdui-list-item-content" id="drawer-home" href="/view/?title=MainPage">Main Page</a>
+        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content" id="drawer-random">Random Page</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">shuffle</i>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content" id="drawer-recent">Recent Changes</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">history</i>
+      </li>
+      <li class="mdui-divider"></li>
+      <li class="mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content" id="drawer-admin">Admin Panel</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">settings</i>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mdui-container">
+    <!-- Article title and tool buttons -->
+    <div id="content-top">
+      <div id="content-top-title">
+        <h1 id="content-top-title-text"></h1>
+      </div> <!-- Article title -->
+      <div id="content-top-buttons">
+        <button id="content-top-edit" class="mdui-btn mdui-btn-icon mdui-ripple">
+          <i class="mdui-icon material-icons">edit</i>
+        </button>
+        <button id="content-top-viewhistory" class="mdui-btn mdui-btn-icon mdui-ripple">
+          <i class="mdui-icon material-icons">history</i>
+        </button>
+      </div> <!-- Edit and view history buttons -->
+    </div>
+    <!-- The main body of our page, article is displayed here -->
+    <div id="content-body"></div>
+  </div>
+
+
+  <script type="module" src="/js/view.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+    integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
