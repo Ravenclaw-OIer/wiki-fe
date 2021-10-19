@@ -10,7 +10,7 @@ function loadArticle() {
 async function checkAuth() {
   if (!userPAT) {
     // redirect user to login page
-    window.location.href = '/auth/';
+    window.location.href = '../auth/';
   } else {
     const menuInst = new mdui.Menu('#appbar-user', '#user-menu');
     menuInst.open();
@@ -20,7 +20,7 @@ async function jumpUserPage() {
   const {
     data: {login},
   } = await octokit.rest.users.getAuthenticated();
-  window.location.href = '/view/?title=User:' + login;
+  window.location.href = '../view/?title=User:' + login;
 }
 document.getElementById('appbar-user').
     addEventListener('click', checkAuth);

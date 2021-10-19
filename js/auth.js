@@ -23,7 +23,7 @@ async function auth(event) {
       console.log(login);
       // save data in sessionStorage
       window.sessionStorage.setItem('PAT', userPAT);
-      window.location.href = '/view/?title=MainPage';
+      window.location.href = '../view/?title=MainPage';
     } catch (e) {
       console.log('Bad credentials');
       document.getElementById('bad-pat-format')
