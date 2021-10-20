@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import {Octokit} from 'https://cdn.skypack.dev/octokit';
 
 async function checkAuth() {
@@ -15,10 +16,21 @@ async function jumpUserPage() {
   } = await octokit.rest.users.getAuthenticated();
   window.location.href = '../view/?title=User:' + login;
 }
-document.getElementById('appbar-user').
-    addEventListener('click', checkAuth);
-document.getElementById('user-menu-userpage').
-    addEventListener('click', jumpUserPage);
+export function instOctokit(userPAT) {
+  const octokit = new Octokit({auth: userPAT}); 
+  return octokit;
+}
+
+try {
+  document.getElementById('appbar-user').
+      addEventListener('click', checkAuth);
+  document.getElementById('user-menu-userpage').
+      addEventListener('click', jumpUserPage);
+} catch (e) {
+  if (e instanceof TypeError) {
+    console.error('Cannot find element: check your html');
+  }
+}
 const userPAT = window.sessionStorage.getItem('PAT');
 console.log(userPAT);
-const octokit = new Octokit({auth: userPAT});
+

@@ -1,4 +1,6 @@
 {
-  "content-repo": "Ravenclaw-OIer/testwiki-content",
-  "admin-users": ["Ravenclaw-OIer"]
+  "contentRepo": {
+    "owner": "Ravenclaw-OIer",
+    "repo": "testwiki-content"
+  }
 } 

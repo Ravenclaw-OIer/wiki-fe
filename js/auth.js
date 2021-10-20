@@ -1,6 +1,5 @@
 /* eslint-disable require-jsdoc */
-import {Octokit} from 'https://cdn.skypack.dev/octokit';
-
+import {instOctokit} from './common.js';
 async function auth(event) {
   event.preventDefault();
   const userPAT = document.getElementById('user-pat').value;
@@ -12,8 +11,8 @@ async function auth(event) {
         ', does it start with <code>ghp_</code> ?';
     document.getElementById('user-pat').value = '';
   } else {
-    const octokit = new Octokit({auth: userPAT});
     try {
+      const octokit = instOctokit(userPAT);
       document.getElementById('bad-pat-format')
           .innerHTML =
           'Awaiting response from GitHub...';
@@ -32,5 +31,6 @@ async function auth(event) {
     }
   }
 }
+
 
 document.getElementById('github-pat-form').addEventListener('submit', auth);
